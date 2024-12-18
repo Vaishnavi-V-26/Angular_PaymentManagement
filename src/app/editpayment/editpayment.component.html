@@ -1,0 +1,25 @@
+<div *ngIf="paymentEdit.showEdit">
+    <h2>EDIT YOUR PAYMENT</h2>
+
+    <form (submit)="update(editForm)" #editForm="ngForm">
+        <div>
+            <div class="form-group">
+                <label for="editname">NAME:</label>
+                <input type="text" class="form-control" id="editname" name="name" [ngModel]="userName"> <br>
+            </div>
+            <div class="form-group">
+                <label for="editccnumber">CARD NUMBER:</label>
+                <input type="text" class="form-control" id="editccnumber"  name="cardNumber" [ngModel]="userCardNumber"  maxlength="16"> <br>
+            </div>
+            <div class="form-group">
+                <label for="editprice">PRICE:</label>
+                <input type="number" class="form-control"  id="editprice" name="price" [ngModel]="userPrice">
+                <br>
+            </div>
+            <button type="submit" class="btn btn-success">Update Payment</button> &nbsp;
+            <button class="btn btn-warning" (click)="cancel()">Cancel</button>
+        </div>
+    </form>
+</div>
+
+<br>

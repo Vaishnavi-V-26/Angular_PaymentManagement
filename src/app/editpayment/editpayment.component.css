@@ -1,0 +1,20 @@
+div{
+    text-align: center;
+}
+
+h2{
+    color: rgb(6, 255, 247);
+    font-weight: bold;
+}
+label{
+    color: bisque;
+}
+button:hover{
+    font-size: medium;
+}
+input[type="text"], input[type="number"] {
+    width: 230px;
+    margin-left: 17cm;
+    text-align: center;
+
+}

@@ -1,0 +1,39 @@
+<div>
+<h2>LIST PAYMENT</h2>
+
+<label for="search">Search By:</label> &nbsp;<select [(ngModel)]="searchBy" id="search">
+    <option value="name">Name</option>
+    <option value="cardNumber">Card Number</option>
+    <option value="price">Price</option>
+</select>
+&nbsp;
+
+<label for="text">Search:</label>&nbsp; <input type="text" [(ngModel)]="searchTxt" id="text"> <br> <br>
+
+<table>
+    <thead>
+    <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Card Number</th>
+        <th>Price</th>
+        <th>Actions </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let obj of usersPayment |filter:searchBy:searchTxt ; index as i ">
+        <td>{{i+1}}</td>
+        <td>{{obj.name | firstLetterCaps}}</td>
+        <td>{{obj.cardNumber | cardNumberFormat}}</td>
+        <td>{{obj.price|currency:"INR"}}</td>
+        <td>
+            <button class="btn btn-success" (click)="editPayment(i)"  >Edit</button> &nbsp;
+            <button class="btn btn-danger" (click)="deletePayment(i)">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</div>
+<hr>
+
+<app-editpayment [myUserDetails]="userDetails"></app-editpayment>
